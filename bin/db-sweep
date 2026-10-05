@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+(static function () {
+    $autoloadPaths = [
+        __DIR__ . '/../vendor/autoload.php',       // local dev
+        __DIR__ . '/../../../autoload.php',         // global composer install
+    ];
+
+    foreach ($autoloadPaths as $path) {
+        if (file_exists($path)) {
+            require $path;
+            break;
+        }
+    }
+
+    $app = new Symfony\Component\Console\Application('db-sweep', '1.0.0');
+    $app->addCommands([new DbSweep\Commands\ScanCommand()]);
+    $app->setDefaultCommand('scan', true);
+    $app->run();
+})();

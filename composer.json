@@ -1,0 +1,28 @@
+{
+    "name": "chameen/db-sweep",
+    "description": "Detect, snapshot, and purge orphaned MySQL databases linked to local workspaces.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chameen Hewavitharana"
+        }
+    ],
+    "require": {
+        "php": ">=8.1",
+        "symfony/console": "^6.4 || ^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DbSweep\\": "src/"
+        }
+    },
+    "bin": [
+        "bin/db-sweep"
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "php tests/edge_cases.php"
+    }
+}
