@@ -13,7 +13,7 @@ Over time, local dev databases accumulate from deleted branches, abandoned side 
 **Composer (global)**
 
 ```bash
-composer global require chameen/db-sweep
+composer global require chxmeen/db-sweep
 ```
 
 **From source**
